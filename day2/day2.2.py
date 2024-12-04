@@ -14,7 +14,6 @@ def solution():
     return result
 
 def isReportSafe(report, is_damper_check = False):
-    
     prev_diff = 0
     flagReport = False
 
@@ -31,7 +30,7 @@ def isReportSafe(report, is_damper_check = False):
 
         if flagReport:
           if not is_damper_check:
-              return isReportSafe(report[:i] + report[i+1:], True) or isReportSafe(report[:i-1] + report[i:], True)
+              return isReportSafe(report[:i] + report[i+1:], True) or isReportSafe(report[:i-1] + report[i:], True) or isReportSafe(report[:i-2] + report[i-1:], True) 
           else:
               return False
           
