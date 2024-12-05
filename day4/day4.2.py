@@ -4,7 +4,7 @@ def solution():
     text = source.read().split("\n")
     source.close()
 
-    def dfs(r, c, dir, word):
+    def x_search(r, c, dir, word):
         # Out of bounds check
         if r < 0 or r >= len(text) or c < 0 or c >= len(text[0]):
             return False
@@ -22,10 +22,10 @@ def solution():
             c_new = c - 2
             # Change direction to top-right
             dir = [-1, 1]
-            return dfs(r, c_new, dir, word)
+            return x_search(r, c_new, dir, word)
 
         # Continue in same direction
-        return dfs(r + dir[0], c + dir[1], dir, word)
+        return x_search(r + dir[0], c + dir[1], dir, word)
 
     result = 0
 
@@ -34,7 +34,7 @@ def solution():
             if text[r][c] in ["M","S"]:
                 # Set direction to bottom-right
                 dir = [1, 1]
-                if dfs(r, c, dir, ""):
+                if x_search(r, c, dir, ""):
                     result += 1
 
     return result
