@@ -18,9 +18,6 @@ def solution():
         if word not in ["X", "XM", "XMA"]:
             return False 
          
-        if len(word) > 4:
-            return False
-        
         # Continue in same direction
         return dfs(r + dir[0], c + dir[1], dir, word)
 
