@@ -22,11 +22,9 @@ def solution():
 
     dir_idx = 0
 
-    visited.add((start_pos[0], start_pos[1]))
-
-    r_curr = start_pos[0] + directions[dir_idx][0]
-    c_curr = start_pos[1] + directions[dir_idx][1]
-
+    r_curr = start_pos[0]
+    c_curr = start_pos[1]
+    
     while True:
         
         visited.add((r_curr, c_curr))
