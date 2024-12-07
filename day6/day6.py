@@ -24,9 +24,8 @@ def solution():
 
     r_curr = start_pos[0]
     c_curr = start_pos[1]
-    
+
     while True:
-        
         visited.add((r_curr, c_curr))
 
         r_next = r_curr + directions[dir_idx][0]
