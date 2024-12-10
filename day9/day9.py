@@ -1,11 +1,11 @@
-from collections import defaultdict
-
 def solution():
     # Read src.txt
     source = open("src.txt", "r")
     input = source.read()
     source.close()
 
+
+    # Create a dictionary of ids to their qty of blocks and proceeding free space.
     files_dict = {}
 
     id = 0
@@ -17,6 +17,9 @@ def solution():
             if i < len(input) - 1:
                 files_dict[id]['free'] = int(input[i + 1])
             id += 1
+
+
+    # Create the result string by taking blocks from the right and inserting them from the left.
     sumstring = ""
     i = 0 
     j = len(files_dict) - 1
@@ -39,7 +42,7 @@ def solution():
 
     # Add the remaining blocks
     sumstring += str(j) * files_dict[j]['blocks'] 
-
+    
     checksum = 0
     for i, n in enumerate(sumstring):
         checksum += i * int(n)
